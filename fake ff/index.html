@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="description" content="Nexa Fake FF — Buat gambar Fake Free Fire dengan nickname kamu secara gratis.">
+    <link rel="preconnect" href="https://api.nexadev.my.id" crossorigin>
+    <link rel="dns-prefetch" href="https://api.nexadev.my.id">
     <title>VanX Fake FF </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -37,6 +41,11 @@
                 maxlength="20" autocomplete="off">
             <span class="char-count"><span id="charCount">0</span>/20</span>
         </div>
+    </div>
+
+    <div class="history-wrap" id="historyWrap">
+        <div class="history-label"><i class="fas fa-history"></i> Terakhir Dibuat</div>
+        <div class="history-chips" id="historyChips"></div>
     </div>
 
     <button class="btn-generate" id="generateBtn" onclick="generate()">
@@ -105,6 +114,9 @@
             <button class="btn-action btn-reset" onclick="reset()">
                 <i class="fas fa-redo"></i> Buat Lagi
             </button>
+            <button class="btn-action btn-download" onclick="downloadImage()">
+                <i class="fas fa-download"></i> Download
+            </button>
             <button class="btn-action btn-dl" onclick="shareImage()">
                 <i class="fas fa-share-alt"></i> Share
             </button>
@@ -136,6 +148,7 @@
 </div>
 
 <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMsg"></span></div>
+<div class="confetti-wrap" id="confettiWrap"></div>
 
 <script src="script.js"></script>
 </body>

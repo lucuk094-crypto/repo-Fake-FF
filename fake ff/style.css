@@ -218,3 +218,43 @@ body {
 ::-webkit-scrollbar{ width:7px; }
 ::-webkit-scrollbar-track{ background:transparent; }
 ::-webkit-scrollbar-thumb{ background:var(--border-glass); border-radius:4px; }
+
+/* ═══════════ ENHANCEMENT v2 ═══════════ */
+
+/* FF-style gradient accent */
+.logo i{ background:linear-gradient(135deg,#ffb347,#ff5e00); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.btn-generate{ background:linear-gradient(135deg,#ff9500,#ff5e00); color:#fff; }
+.btn-generate:hover:not(:disabled){ filter:brightness(1.08); }
+.btn-generate:active:not(:disabled){ transform:scale(0.97); }
+
+/* Ripple effect */
+.btn-generate,.btn-action,.chip,.btn-retry,.btn-open,.btn-cancel{ position:relative; overflow:hidden; }
+.ripple{ position:absolute; border-radius:50%; transform:scale(0); background:rgba(255,255,255,0.4); animation:rippleFx 0.55s ease-out forwards; pointer-events:none; }
+@keyframes rippleFx{ to{ transform:scale(3); opacity:0; } }
+
+/* History chips */
+.history-wrap{ display:none; margin:-4px 0 18px; animation:fadeUp 0.4s ease; }
+.history-wrap.show{ display:block; }
+.history-label{ display:flex; align-items:center; justify-content:center; gap:6px; font-size:0.68rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.6px; margin-bottom:9px; }
+.history-chips{ display:flex; flex-wrap:wrap; gap:7px; justify-content:center; }
+.chip{ padding:7px 13px; border-radius:50px; background:var(--bg-glass); border:1px solid var(--border-glass); color:var(--text-secondary); font-size:0.75rem; font-weight:600; cursor:pointer; transition:all 0.25s ease; display:inline-flex; align-items:center; gap:6px; }
+.chip:hover{ background:var(--bg-glass-hover); transform:translateY(-2px); color:var(--text-primary); box-shadow:0 6px 14px var(--shadow); }
+.chip i{ font-size:0.62rem; color:var(--text-muted); }
+
+/* Actions: 3 kolom */
+.actions{ grid-template-columns:repeat(3,1fr); }
+.btn-download{ background:linear-gradient(135deg,#00c853,#009624); color:#fff; border:none; }
+.btn-download:hover:not(:disabled){ transform:translateY(-2px); box-shadow:0 10px 20px -5px var(--shadow-lg); filter:brightness(1.06); }
+
+/* Confetti */
+.confetti-wrap{ position:fixed; inset:0; pointer-events:none; z-index:3000; overflow:hidden; }
+.confetti{ position:absolute; width:9px; height:14px; top:-20px; border-radius:2px; animation:confettiFall linear forwards; }
+@keyframes confettiFall{ to{ transform:translateY(115vh) rotate(720deg); opacity:0.85; } }
+
+/* Smooth image reveal */
+.result-img{ animation:imgIn 0.55s ease; }
+@keyframes imgIn{ from{ opacity:0; filter:blur(10px); transform:scale(1.02); } to{ opacity:1; filter:blur(0); transform:scale(1); } }
+
+/* Toast entrance lebih hidup */
+.toast.show{ animation:toastPop 0.4s cubic-bezier(0.16,1,0.3,1); }
+@keyframes toastPop{ 0%{ transform:translateX(-50%) translateY(40px) scale(0.9); } 100%{ transform:translateX(-50%) translateY(0) scale(1); } }
